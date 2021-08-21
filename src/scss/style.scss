@@ -1,0 +1,9 @@
+h1 {
+  color: red;
+  display: flex;
+  display: -webkit-box;
+
+  &:hover {
+    color: blue;
+  }
+}
