@@ -142,22 +142,6 @@
   }
 }
 
-// Color Gradient:
-@mixin pink-gradient {
-  background: $light-pink;
-  background: linear-gradient(90deg, $light-purple 0%, $light-pink 100%);
-}
-
-// Beer color swatch
-@mixin beer-color($size: 30px) {
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: $size;
-  height: $size;
-  border: $base-border;
-}
-
 @mixin fake-input-text {
   font-size: 14px;
   font-family: $base-font-family;
@@ -172,117 +156,7 @@
   outline-offset: $focus-outline-offset;
 }
 
-@mixin top-card($color-size: 50px) {
-  .color {
-    @include beer-color($color-size);
-  }
-  .label {
-    margin-bottom: $small-spacing;
-  }
-  .title {
-    margin-bottom: $small-spacing;
-  }
-  .description {
-    margin-bottom: $small-spacing * 2;
-  }
-  .stats {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .stat h6 {
-      margin-bottom: 0;
-      @include tablet {
-        font-size: 16px;
-      }
-    }
-  }
-}
-
-@mixin close-button(
-  $padding: 5px,
-  $height: 24px,
-  $width: 32px,
-  $thickness: 4px
-) {
-  border: none;
-  background: $white;
-  padding: $padding;
-  position: relative;
-  overflow: hidden;
-  .lines {
-    display: block;
-    position: relative;
-    height: $height;
-    width: $width;
-    @include flex(center, center, column);
-    transition: all 300ms;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      height: $thickness;
-      width: $width + 1;
-      background: $black;
-    }
-    .line {
-      display: block;
-      width: 100%;
-      height: $thickness;
-      position: absolute;
-      background: $black;
-      transition: all 300ms;
-      &:first-of-type {
-        top: 0;
-      }
-      &:last-of-type {
-        bottom: 0;
-      }
-    }
-  }
-  &.open {
-    .lines {
-      &:before {
-        transform: rotate(45deg);
-      }
-      &:after {
-        transform: rotate(-45deg);
-      }
-    }
-    .line {
-      transform: translateX(120%);
-    }
-  }
-}
-
-@mixin mobile-panels {
-  display: none;
-  position: fixed;
+@mixin fullscreen {
   width: 100%;
-  height: calc(100% - 71px);
-  top: 71px;
-  right: 0;
-  background: $white;
-  z-index: 2;
-  // border: $base-border;
-  // transform: translateX(100%);
-}
-
-@mixin select {
-  color: $black;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1;
-  padding: $input-padding;
-  max-width: 100%;
-  box-sizing: border-box;
-  border: $base-border;
-  box-shadow: none;
-  border-radius: $base-border-radius;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: $white;
-  background-image: url('../../assets/img/chevron-down.png');
-  background-repeat: no-repeat, repeat;
-  background-position: right 0.7em top 54%, 0 0;
-  background-size: 12px auto, 100%;
+  height: 100%;
 }

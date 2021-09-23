@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap');
 
 // Fonts
@@ -18,22 +19,27 @@ $heading-line-height: 1;
 $base-font-weight: 400;
 $heading-font-weight: 900;
 
-// Other Sizes
+// Site Width
 $site-width-large: 1400px;
 $site-width-medium: 1040px;
 $site-width-small: 840px;
-$bottom-margin-large: 120px;
-$bottom-margin-small: $bottom-margin-large / 2;
-$base-border-radius: 0px;
-$base-spacing: 30px;
-$small-spacing: 20px;
-$card-spacing: 15px;
+
+// Spacing
+$spacing-8: 8px;
+$spacing-16: 16px;
+$spacing-24: 24px;
+$spacing-32: 32px;
+$spacing-48: 48px;
+$spacing-64: 64px;
+$spacing-120: 120px;
+$spacing-200: 200px;
 
 // Colors
 $black: #363636;
 $white: #ffffff;
 $off-white: #f3f3f3;
 $light-grey: #d4d4d4;
+$grey: #797979;
 $light-purple: #eacbef;
 $light-pink: #ffa4a4;
 $red: #e74c3c;
@@ -89,3 +95,6 @@ $_form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
 $_form-box-shadow-focus: $_form-box-shadow,
   0 0 5px rgba($base-border-color, 0.7);
 $input-padding: 16px 0.8em 14px;
+
+// Grid Settings
+$grid-space: 50px;

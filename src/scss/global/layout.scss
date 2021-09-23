@@ -1,5 +1,6 @@
 @use './variables.scss' as *;
 @use './mixins.scss' as *;
+@use 'sass:math';
 
 *,
 *::before,
@@ -22,30 +23,50 @@ body {
   margin: 0;
 }
 
-.wrapper {
+main {
+  height: calc(100vh - 36px);
   width: 100%;
-  max-width: $site-width-large;
-  margin: auto;
-  padding: 0 30px;
 }
 
-main {
-  padding: 95px 0 60px 0;
-  @include tablet {
-    padding: 71px 0 60px;
+.header,
+.section {
+  &__wrapper {
+    width: 100%;
+    margin: auto;
+    padding: 0 $spacing-24;
   }
 }
 
-.block {
-  margin-bottom: $bottom-margin-large;
-  &:first-of-type {
-    padding-top: $bottom-margin-large;
-    @include tablet {
-      padding-top: $bottom-margin-large / 2;
+.section {
+  $self: &;
+  &--fullscreen {
+    @include fullscreen;
+    padding: $spacing-24 0;
+    #{$self}__wrapper,
+    #{$self}__items {
+      @include fullscreen;
     }
   }
-  @include tablet {
-    margin-bottom: $bottom-margin-large / 2;
+  &__row {
+    @include flex;
+  }
+  &__col {
+    flex: 1;
+  }
+  &__items {
+    @include clear-list;
+    &--flex {
+      @extend .section__items;
+      @include flex;
+    }
+    &--grid {
+      @extend .section__items;
+      display: grid;
+      gap: 30px;
+    }
+  }
+  &__image {
+    width: 100%;
   }
 }
 
@@ -57,4 +78,18 @@ main {
   width: 0;
   height: 0;
   opacity: 0;
+}
+
+// Grid settings
+
+.grid {
+  @for $i from 1 through 5 {
+    &--#{$grid-space * $i} {
+      grid-template-columns: repeat(auto-fill, minmax($grid-space * $i, 1fr));
+      grid-template-rows: repeat(auto-fill, minmax($grid-space * $i, 1fr));
+    }
+  }
+  &--column {
+    grid-auto-flow: column;
+  }
 }

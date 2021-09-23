@@ -6,8 +6,19 @@
   <body>
     <div>
       <h1><%= htmlWebpackPlugin.options.title %></h1>
- 
-      <div id="app">
+
+      <section class="section">
+        <div class="section__wrapper">
+          <div class="section__row">
+            <div class="section__col">
+              <img
+                src="<%=require('./assets/images/folder.svg')%>"
+                alt="folder"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
