@@ -17,56 +17,39 @@ html {
 html,
 body {
   height: 100%;
-}
-
-body {
-  margin: 0;
-}
-
-main {
-  height: calc(100vh - 36px);
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.header,
 .section {
+  position: relative;
+  width: 100%;
   &__wrapper {
     width: 100%;
+    max-width: $site-width-large;
     margin: auto;
-    padding: 0 $spacing-24;
-  }
-}
-
-.section {
-  $self: &;
-  &--fullscreen {
-    @include fullscreen;
-    padding: $spacing-24 0;
-    #{$self}__wrapper,
-    #{$self}__items {
-      @include fullscreen;
-    }
+    padding: 0 24px;
   }
   &__row {
+    width: 100%;
     @include flex;
   }
   &__col {
     flex: 1;
   }
-  &__items {
-    @include clear-list;
-    &--flex {
-      @extend .section__items;
-      @include flex;
-    }
-    &--grid {
-      @extend .section__items;
-      display: grid;
-      gap: 30px;
-    }
+}
+
+.header,
+.footer {
+  &__wrapper {
+    @extend .section__wrapper;
   }
-  &__image {
-    width: 100%;
+  &__row {
+    @extend .section__row;
+  }
+  &__col {
+    @extend .section__col;
   }
 }
 
@@ -80,16 +63,65 @@ main {
   opacity: 0;
 }
 
-// Grid settings
-
-.grid {
-  @for $i from 1 through 5 {
-    &--#{$grid-space * $i} {
-      grid-template-columns: repeat(auto-fill, minmax($grid-space * $i, 1fr));
-      grid-template-rows: repeat(auto-fill, minmax($grid-space * $i, 1fr));
+// ********************* FLEXBOX ********************** //
+.flex {
+  display: block;
+  @include tablet-portrait-up {
+    @include flex;
+  }
+  &--row-reverse {
+    @extend .flex;
+    @include tablet-portrait-up {
+      @include flex($dir: row-reverse);
     }
   }
-  &--column {
-    grid-auto-flow: column;
+  &--col {
+    @extend .flex;
+    @include tablet-portrait-up {
+      @include flex($dir: column);
+    }
+  }
+  &--col-reverse {
+    @extend .flex;
+    @include tablet-portrait-up {
+      @include flex($dir: column-reverse);
+    }
+  }
+}
+
+// ********************* GRID ********************** //
+// .grid {
+//   @for $i from 1 through 5 {
+//     &--#{$grid-space * $i} {
+//       grid-template-columns: repeat(auto-fill, minmax($grid-space * $i, 1fr));
+//       grid-template-rows: repeat(auto-fill, minmax($grid-space * $i, 1fr));
+//     }
+//   }
+//   &--column {
+//     grid-auto-flow: column;
+//   }
+// }
+
+// ********************* LAYOUT MODIFIERS ********************** //
+.padding {
+  @each $position in $positions {
+    &--#{$position} {
+      @each $size in $sizes {
+        &-#{$size} {
+          padding-#{$position}: $size;
+        }
+      }
+    }
+  }
+}
+.margin {
+  @each $position in $positions {
+    &--#{$position} {
+      @each $size in $sizes {
+        &-#{$size} {
+          margin-#{$position}: $size;
+        }
+      }
+    }
   }
 }

@@ -1,4 +1,4 @@
-@use "./variables.scss" as *;
+@use './variables.scss' as *;
 
 // Breakpoints
 @mixin mobile-only {
@@ -6,23 +6,23 @@
     @content;
   }
 }
-@mixin tablet-portrait {
-  @media (max-width: 600px) {
+@mixin tablet-portrait-up {
+  @media (min-width: 600px) {
     @content;
   }
 }
-@mixin tablet {
-  @media (max-width: 900px) {
+@mixin tablet-landscape-up {
+  @media (min-width: 900px) {
     @content;
   }
 }
-@mixin desktop {
-  @media (max-width: 1200px) {
+@mixin desktop-up {
+  @media (min-width: 1200px) {
     @content;
   }
 }
-@mixin big-desktop {
-  @media (max-width: 1800px) {
+@mixin big-desktop-up {
+  @media (min-width: 1400px) {
     @content;
   }
 }

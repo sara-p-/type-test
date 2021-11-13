@@ -1,5 +1,5 @@
-@use "./variables.scss" as *;
-@use "./mixins.scss" as *;
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
 
 html,
 p,
@@ -11,7 +11,7 @@ p span {
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
   color: $base-font-color;
-  @include tablet {
+  @include tablet-portrait-up {
     font-size: $mobile-font-size;
   }
 }
@@ -23,7 +23,7 @@ p {
 h1,
 .h1 {
   @include heading-style(64px, $heading-font-family, 900);
-  @include tablet {
+  @include tablet-portrait-up {
     font-size: 36px;
   }
 }
@@ -32,7 +32,7 @@ h2,
 .h2 {
   @include heading-style(48px, $heading-font-family, 900);
   // letter-spacing: 0.02px;
-  @include tablet {
+  @include tablet-portrait-up {
     font-size: 34px;
   }
 }
@@ -40,7 +40,7 @@ h2,
 h3,
 .h3 {
   @include heading-style(36px, $base-font-family, 300);
-  @include tablet {
+  @include tablet-portrait-up {
     font-size: 24px;
   }
 }
@@ -48,7 +48,7 @@ h3,
 h4,
 .h4 {
   @include heading-style(24px, $base-font-family, 500);
-  @include tablet {
+  @include tablet-portrait-up {
     font-size: 18px;
   }
 }
@@ -58,7 +58,7 @@ h5,
   @include heading-style(24px, $base-font-family, 400);
   text-transform: none;
   line-height: 32px;
-  @include tablet {
+  @include tablet-portrait-up {
     font-size: 16px;
   }
 }
