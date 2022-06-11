@@ -1,0 +1,44 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+.icon {
+  &:after {
+    display: inline-block;
+    font-style: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    color: $black;
+    padding-left: $spacing-8;
+  }
+  &--arrow-long-right {
+    @extend .icon;
+    &:after {
+      content: '\f178';
+    }
+  }
+  &--login {
+    @extend .icon;
+    &:after {
+      content: '\f090';
+    }
+  }
+  &--logout {
+    @extend .icon;
+    &:after {
+      content: '\f08b';
+    }
+  }
+  &--chevron-right {
+    @extend .icon;
+    &:after {
+      content: '\f054';
+    }
+  }
+  &--chevron-down {
+    @extend .icon;
+    &:after {
+      content: '\f078';
+    }
+  }
+}

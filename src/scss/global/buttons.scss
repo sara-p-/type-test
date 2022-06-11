@@ -1,7 +1,15 @@
 @use './variables.scss' as *;
 @use './mixins.scss' as *;
 
-button {
+.buttons {
+  width: 100%;
+}
+
+button,
+.button {
   @include clear-btn;
-  cursor: pointer;
+  @include btn-base;
+  &--primary {
+    @extend .button;
+  }
 }
