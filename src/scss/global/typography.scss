@@ -8,113 +8,119 @@ p span {
   font-family: $base-font-family;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
-  font-size: $base-font-size;
+  font-size: $mobile-font-size;
   -webkit-font-smoothing: antialiased;
-  color: $base-font-color;
+  color: $black;
   @include tablet-portrait-up {
-    font-size: $mobile-font-size;
+    font-size: $tablet-font-size;
+  }
+  @include desktop-up {
+    font-size: $base-font-size;
   }
 }
 
 p {
-  margin: 0 0 20px 0;
+  margin: 0 0 24px 0;
 }
 
 h1,
 .h1 {
-  @include heading-style(64px, $heading-font-family, 900);
-  @include tablet-portrait-up {
-    font-size: 36px;
+  @include heading-style(6rem);
+  &--large {
+    @include heading-style(12rem);
   }
 }
 
 h2,
 .h2 {
-  @include heading-style(48px, $heading-font-family, 900);
-  // letter-spacing: 0.02px;
-  @include tablet-portrait-up {
-    font-size: 34px;
-  }
+  @include heading-style(5rem);
 }
 
 h3,
 .h3 {
-  @include heading-style(36px, $base-font-family, 300);
-  @include tablet-portrait-up {
-    font-size: 24px;
-  }
+  @include heading-style(4rem);
 }
 
 h4,
 .h4 {
-  @include heading-style(24px, $base-font-family, 500);
-  @include tablet-portrait-up {
-    font-size: 18px;
-  }
+  @include heading-style(3rem);
 }
 
 h5,
 .h5 {
-  @include heading-style(24px, $base-font-family, 400);
-  text-transform: none;
-  line-height: 32px;
-  @include tablet-portrait-up {
-    font-size: 16px;
-  }
+  @include heading-style(2rem);
 }
 
 h6,
 .h6 {
-  @include heading-style(14px, $base-font-family, 500);
+  @include heading-style(1rem);
 }
 
-a,
-.styled-btn {
-  color: $black;
-  transition: all $base-duration $base-timing;
-  padding: 3px;
-  background: transparent;
-  line-height: 1;
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border: none;
-  z-index: 1;
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transform: translateX(-101%);
-    transition: all $base-duration $base-timing;
-    background: $black;
-    z-index: -1;
-  }
+.link {
+  color: $blue;
+  text-decoration: underline;
   &:hover,
   &:focus {
-    color: $off-white;
-    &::before {
-      transform: translateX(0%);
+    color: $red;
+  }
+  &--tag {
+    text-decoration: none;
+    padding: 8px 16px;
+    color: $black;
+    border-radius: 25px;
+    line-height: 1;
+    font-weight: 500;
+    background: $grey--light;
+  }
+}
+
+.logo {
+  color: $black;
+  text-decoration: none;
+  margin-bottom: 0;
+  font-size: 32px;
+}
+
+.ribbon {
+  position: absolute;
+  width: 200px;
+  top: 32px;
+  right: -50px;
+  transform: rotate(45deg);
+  text-align: center;
+  line-height: 32px;
+  font-size: 12px;
+  font-weight: 500;
+  color: $black;
+  // box-shadow: $box-shadow;
+  border: $base-border;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+  }
+  &--personal {
+    @extend .ribbon;
+    background-color: $rainbow--green;
+    &:before {
+      content: 'Personal Project';
     }
   }
-  &:focus {
-    outline: $focus-outline;
-    outline-offset: 1px;
+  &--professional {
+    @extend .ribbon;
+    background-color: $rainbow--blue;
+    &:before {
+      content: 'Professional Project';
+    }
   }
-}
-
-hr {
-  border-bottom: $base-border;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  margin: $spacing-24 0;
-}
-
-blockquote {
-  position: relative;
-  margin: 0;
-  padding: 0;
+  &--case-study {
+    @extend .ribbon;
+    right: auto;
+    left: -50px;
+    transform: rotate(-45deg);
+    background-color: $rainbow--pink;
+    &:before {
+      content: 'Case Study';
+    }
+  }
 }

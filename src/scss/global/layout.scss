@@ -20,17 +20,35 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  background: $white;
+}
+
+main {
+  // padding-top: 75px;
 }
 
 .section {
   $self: &;
   position: relative;
   width: 100%;
+  // margin-bottom: 8rem;
+  border-bottom: $base-border;
   &--fullscreen {
     height: calc(100vh - 90.5px);
     #{$self}__wrapper,
     #{$self}__row {
       height: 100%;
+    }
+  }
+  &--space {
+    @extend .section;
+    padding: 3em 0;
+    &--center {
+      @extend .section--space;
+    }
+    &-top {
+      @extend .section--space;
+      padding-top: 30vh;
     }
   }
   &__wrapper {
@@ -116,6 +134,12 @@ body {
       @include flex($align: flex-start);
     }
   }
+  &--justify-start {
+    @extend .flex;
+    @include tablet-portrait-up {
+      @include flex($justify: flex-start);
+    }
+  }
 }
 
 // ********************* GRID ********************** //
@@ -151,6 +175,41 @@ body {
           margin-#{$position}: $size;
         }
       }
+    }
+  }
+}
+
+// ********************* BACKGROUND MODIFIERS ********************** //
+.background {
+  &--black {
+    background: $black;
+  }
+  &--white {
+    background: $white;
+  }
+  &--rainbow--pink {
+    background: $rainbow--pink;
+  }
+  &--rainbow--purple {
+    background: $rainbow--purple;
+  }
+  &--rainbow--yellow {
+    background: $rainbow--yellow;
+  }
+  &--rainbow--blue {
+    background: $rainbow--blue;
+  }
+  &--rainbow--green {
+    background: $rainbow--green;
+  }
+}
+
+// ********************* BORDER MODIFIERS ********************** //
+.border {
+  &--bottom {
+    border-bottom: 96px solid $black;
+    &--none {
+      border-bottom: none;
     }
   }
 }

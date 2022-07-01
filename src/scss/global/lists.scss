@@ -1,2 +1,31 @@
 @use './variables.scss' as *;
 @use './mixins.scss' as *;
+
+.list {
+  @include clear-list;
+  width: 100%;
+  display: block;
+  &__item {
+    display: block;
+    width: 100%;
+    position: relative;
+    // @include flex($justify: space-between, $wrap: nowrap);
+    border-bottom: $base-border;
+  }
+  &__link {
+    text-decoration: none;
+    color: $black;
+  }
+  &__wrapper {
+    padding: 24px 32px;
+  }
+  &__title {
+    margin-bottom: 0;
+  }
+  &__website-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+}

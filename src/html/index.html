@@ -11,50 +11,83 @@
     <header class="header">
       <div class="header__wrapper">
         <div class="header__row">
-          <div class="header__col">
-            <a href="/" class="logo">
-              <img
-                src="<%=require('../../images/placeholder-logo.svg')%>"
-                alt="Logo"
-                class="logo__image"
-              />
-            </a>
-          </div>
+          <a href="/" class="logo h4">SP</a>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/" class="nav__link icon--linkedin"
+                  ><span class="visually-hidden">LinkedIn</span></a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link icon--github"
+                  ><span class="visually-hidden">Github</span></a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link icon--instagram"
+                  ><span class="visually-hidden">Instagram</span></a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link icon--paper-plane"
+                  ><span class="visually-hidden">Contact</span></a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
     <main>
-      <section class="section">
+      <section id="about" class="section--space-top">
         <div class="section__wrapper">
-          <div class="section__row">
-            <div class="section__col">
-              <h1>Project Title</h1>
-            </div>
-            <div class="section__col">
-              <img
-                class="image--contain"
-                src="<%=require('../../images/folder.svg')%>"
-                alt="folder"
-              />
-            </div>
+          <div class="section__row flex--justify-start">
+            <h1 class="h2">
+              <span class="h1--large">Hello.</span> My name is Sara. I am a web
+              developer and artist.
+            </h1>
           </div>
         </div>
       </section>
+      <section class="section--space--center">
+        <div class="section__wrapper">
+          <div class="section__row flex--justify-start">
+            <h2 class="h3">Here are some things I have made.</h2>
+          </div>
+        </div>
+      </section>
+      <section id="work" class="section border--bottom--none">
+        <ul class="list">
+          <li class="list__item">
+            <a href="/" class="button--list-link list__link">
+              <div class="list__wrapper">
+                <h4 class="h4 list__title">
+                  Red Ball Recycling
+                  <span class="visually-hidden">Case Study</span>
+                </h4>
+              </div>
+            </a>
+            <a
+              href="/"
+              class="button--website-link list__website-link icon--up-right-from-square"
+              ><span class="visually-hidden"
+                >Go to Red Ball Recycling Website</span
+              ></a
+            >
+          </li>
+        </ul>
+        <div class="section__wrapper"></div>
+      </section>
     </main>
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="footer__wrapper">
         <div class="footer__row">
           <div class="footer__col">
-            <a href="/" class="logo">
-              <img
-                src="<%=require('../../images/placeholder-logo.svg')%>"
-                alt="Home"
-                class="logo__image"
-              />
-            </a>
+            <a href="/" class="logo h4">SP</a>
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
   </body>
 </html>

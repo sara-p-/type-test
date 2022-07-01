@@ -1,25 +1,28 @@
 @use 'sass:math';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;400;500&family=Playfair+Display:wght@400;700&display=swap');
 
 // Fonts
-$base-font-family: 'Montserrat', sans-serif;
-$heading-font-family: $base-font-family;
+$base-font-family: 'Open Sans', sans-serif;
+$heading-font-family: 'Oswald', sans-serif;
+$heading2-font-family: 'Playfair Display', serif;
 
 // Font Size
-$base-font-size: 16px;
-$desktop-font-size: 16px;
+$base-font-size: 24px;
+// $desktop-font-size: 16px;
 $tablet-font-size: 16px;
-$mobile-font-size: 14px;
+$mobile-font-size: 12px;
 
 // Line Height
-$base-line-height: 26px;
+$base-line-height: 1.35;
 $heading-line-height: 1;
 
 // Font Weight
 $base-font-weight: 400;
-$heading-font-weight: 900;
+$heading-font-weight: 700;
 
 // Site Width
+$site-width-extra-large: 1905px;
 $site-width-large: 1400px;
 $site-width-medium: 1040px;
 $site-width-small: 840px;
@@ -41,23 +44,44 @@ $positions: top, right, bottom, left;
 // Colors
 $black: #363636;
 $white: #ffffff;
-$off-white: #f3f3f3;
-$light-grey: #d4d4d4;
+$red: red;
+$blue: blue;
+$background--white: #f0f0f0;
+
+$off-black: #463f3a;
+$dark-grey: #8a817c;
+$light-grey: #bcb8b1;
+$off-white: #f4f3ee;
+$pink: #e0afa0;
+
+// Grey
+$grey--black: #1c1c1c;
+$grey--cool: #daddd8;
+$grey--warm: #ecebe4;
+$grey--light: #eef0f2;
+$grey--white: #fafaff;
+$grey--cool--darken: darken($grey--cool, 25%);
+
+// Rainbow
+$rainbow--purple: #9b5de5;
+$rainbow--pink: #f15bb5;
+$rainbow--yellow: #fee440;
+$rainbow--blue: #00bbf9;
+$rainbow--green: #00f5d4;
+
 $grey: #797979;
 $light-purple: #eacbef;
 $light-pink: #ffa4a4;
-$red: #e74c3c;
-$blue: blue;
 
 $links: $black;
 $hover: $black;
 
 // Font Colors
-$base-font-color: $black;
-$action-color: $black;
-$error-color: $black;
+$base-font-color: $grey--black;
+$action-color: $grey--black;
+$error-color: $grey--black;
 
-$base-font-color: $black;
+$base-font-color: $grey--black;
 $color-selection: $light-grey;
 
 // Buttons
@@ -69,6 +93,9 @@ $btn-border-radius: 0;
 // Border
 $base-border-color: $black;
 $base-border: 2px solid $base-border-color;
+
+// Box Shadow
+$box-shadow: 0px 0px 5px 0px $grey--black;
 
 // Background Colors
 $viewport-background-color: $white;

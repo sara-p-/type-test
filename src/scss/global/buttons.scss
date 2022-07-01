@@ -9,7 +9,19 @@ button,
 .button {
   @include clear-btn;
   @include btn-base;
-  &--primary {
+  &--list-link {
+    @include clear-btn;
+  }
+  &--website-link {
     @extend .button;
+    border-left: $base-border;
+    padding: 0 1.5rem;
+    @include flex;
+    font-size: 1.5rem;
+    &:hover,
+    &:focus {
+      color: $white;
+      background: $black;
+    }
   }
 }

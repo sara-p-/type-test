@@ -8,8 +8,8 @@
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-solid);
-    color: $black;
-    padding-left: $spacing-8;
+    // color: $black;
+    // padding-left: $spacing-8;
   }
   &--arrow-long-right {
     @extend .icon;
@@ -17,28 +17,55 @@
       content: '\f178';
     }
   }
-  &--login {
+  &--linkedin {
     @extend .icon;
     &:after {
-      content: '\f090';
+      font: var(--fa-font-brands);
+      content: '\f0e1';
     }
   }
-  &--logout {
+  &--github {
     @extend .icon;
     &:after {
-      content: '\f08b';
+      font: var(--fa-font-brands);
+      content: '\f09b';
     }
   }
-  &--chevron-right {
+  &--instagram {
     @extend .icon;
     &:after {
-      content: '\f054';
+      font: var(--fa-font-brands);
+      content: '\f16d';
     }
   }
-  &--chevron-down {
+  &--paper-plane {
     @extend .icon;
     &:after {
-      content: '\f078';
+      content: '\f1d8';
+    }
+  }
+  &--up-right-from-square {
+    @extend .icon;
+    &:after {
+      content: '\f35d';
+    }
+    // &--white {
+    //   @extend .icon--up-right-from-square;
+    //   &:after {
+    //     color: $white;
+    //   }
+    // }
+  }
+  &--angle-right {
+    @extend .icon;
+    &:after {
+      content: '\f105';
+    }
+  }
+  &--book {
+    @extend .icon;
+    &:after {
+      content: '\f02d';
     }
   }
 }
