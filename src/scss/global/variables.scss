@@ -1,11 +1,9 @@
 @use 'sass:math';
 // @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;400;500&family=Playfair+Display:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 // Fonts
-$base-font-family: 'Open Sans', sans-serif;
-$heading-font-family: 'Oswald', sans-serif;
-$heading2-font-family: 'Playfair Display', serif;
+$base-font-family: 'Poppins', sans-serif;
+$heading-font-family: 'Poppins', sans-serif;
 
 // Font Size
 $base-font-size: 24px;
@@ -18,7 +16,7 @@ $base-line-height: 1.35;
 $heading-line-height: 1;
 
 // Font Weight
-$base-font-weight: 400;
+$base-font-weight: 300;
 $heading-font-weight: 700;
 
 // Site Width
@@ -42,11 +40,37 @@ $sizes: 8px, 16px, 24px, 32px, 48px, 64px, 120px, 160px, 200px;
 $positions: top, right, bottom, left;
 
 // Colors
-$black: #363636;
-$white: #ffffff;
-$red: red;
-$blue: blue;
-$background--white: #f0f0f0;
+:root {
+  --color9: #fbf8ccff;
+  --color8: #fde4cfff;
+  --color7: #ffcfd2ff;
+  --color6: #f1c0e8ff;
+  --color5: #cfbaf0ff;
+  --color4: #a3c4f3ff;
+  --color3: #90dbf4ff;
+  --color2: #8eecf5ff;
+  --color1: #98f5e1ff;
+  --color0: #b9fbc0ff;
+  --black: #363636;
+  --white: #ffffff;
+  --blue: blue;
+  --red: red;
+}
+
+$black: var(--black);
+$white: var(--white);
+$color0: var(--color0);
+$color1: var(--color1);
+$color2: var(--color2);
+$color3: var(--color3);
+$color4: var(--color4);
+$color5: var(--color5);
+$color6: var(--color6);
+$color7: var(--color7);
+$color8: var(--color8);
+$color9: var(--color9);
+$blue: var(--blue);
+$red: var(--red);
 
 $off-black: #463f3a;
 $dark-grey: #8a817c;
@@ -62,27 +86,16 @@ $grey--light: #eef0f2;
 $grey--white: #fafaff;
 $grey--cool--darken: darken($grey--cool, 25%);
 
-// Rainbow
-$rainbow--purple: #9b5de5;
-$rainbow--pink: #f15bb5;
-$rainbow--yellow: #fee440;
-$rainbow--blue: #00bbf9;
-$rainbow--green: #00f5d4;
-
-$grey: #797979;
-$light-purple: #eacbef;
-$light-pink: #ffa4a4;
-
 $links: $black;
 $hover: $black;
 
 // Font Colors
-$base-font-color: $grey--black;
-$action-color: $grey--black;
-$error-color: $grey--black;
+$base-font-color: $black;
+$action-color: $black;
+$error-color: $black;
 
-$base-font-color: $grey--black;
-$color-selection: $light-grey;
+$base-font-color: $black;
+$color-selection: $black;
 
 // Buttons
 $btn-bg-color: transparent;
@@ -95,7 +108,7 @@ $base-border-color: $black;
 $base-border: 2px solid $base-border-color;
 
 // Box Shadow
-$box-shadow: 0px 0px 5px 0px $grey--black;
+$box-shadow: 0px 0px 5px 0px $black;
 
 // Background Colors
 $viewport-background-color: $white;

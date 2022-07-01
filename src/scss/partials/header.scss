@@ -4,7 +4,7 @@
 .header {
   background: $white;
   padding: 24px 0;
-  border-bottom: $base-border;
+  // border-bottom: $base-border;
   &__row {
     @include flex($justify: space-between);
   }

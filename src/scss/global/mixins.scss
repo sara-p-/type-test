@@ -28,12 +28,11 @@
 }
 
 // Styleguide
-@mixin heading-style($font-size: 15em) {
-  font-size: math.div($font-size, 3);
+@mixin heading-style($font-size: 15rem) {
   font-family: $heading-font-family;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   font-size: $font-size;
   margin: 0;
 }
@@ -73,9 +72,10 @@
   line-height: $base-line-height;
   background: transparent;
   border: none;
-  color: $base-font-color;
+  color: $black;
   // transform: translate(0);
   text-transform: none;
+  text-decoration: none;
   border-radius: 0;
   box-shadow: none;
   text-shadow: none;

@@ -8,13 +8,12 @@
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-solid);
-    // color: $black;
-    // padding-left: $spacing-8;
   }
   &--arrow-long-right {
     @extend .icon;
     &:after {
       content: '\f178';
+      padding-left: 0.25rem;
     }
   }
   &--linkedin {

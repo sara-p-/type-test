@@ -31,43 +31,37 @@ main {
   $self: &;
   position: relative;
   width: 100%;
-  // margin-bottom: 8rem;
+  margin-bottom: 0;
   border-bottom: $base-border;
-  &--fullscreen {
-    height: calc(100vh - 90.5px);
-    #{$self}__wrapper,
-    #{$self}__row {
-      height: 100%;
-    }
-  }
-  &--space {
+  padding: 0 0 1rem 0;
+  &--list {
     @extend .section;
-    padding: 3em 0;
-    &--center {
-      @extend .section--space;
-    }
-    &-top {
-      @extend .section--space;
-      padding-top: 30vh;
-    }
+    padding: 0;
+    border-bottom: none;
+  }
+  &--medium {
+    @extend .section;
+    padding: 3rem 0;
+  }
+  &--large {
+    @extend .section;
+    padding: 10rem 0 1rem;
   }
   &__wrapper {
     width: 100%;
     max-width: $site-width-extra-large;
-    margin: auto;
+    margin-right: auto;
     padding: 0 32px;
   }
   &__row {
     width: 100%;
-    @include flex;
+    @include flex($justify: flex-start);
+    gap: 1rem;
+    padding: 1rem 0;
   }
   &__col {
-    flex: 1;
-    padding: 0 $spacing-24;
-    &--flex {
-      height: 100%;
-      @include flex;
-    }
+    width: 100%;
+    max-width: 800px;
   }
   // &__content {
   //   max-width: 500px;
@@ -79,12 +73,6 @@ main {
 .footer {
   &__wrapper {
     @extend .section__wrapper;
-  }
-  &__row {
-    @extend .section__row;
-  }
-  &__col {
-    @extend .section__col;
   }
 }
 
@@ -179,35 +167,10 @@ main {
   }
 }
 
-// ********************* BACKGROUND MODIFIERS ********************** //
-.background {
-  &--black {
-    background: $black;
-  }
-  &--white {
-    background: $white;
-  }
-  &--rainbow--pink {
-    background: $rainbow--pink;
-  }
-  &--rainbow--purple {
-    background: $rainbow--purple;
-  }
-  &--rainbow--yellow {
-    background: $rainbow--yellow;
-  }
-  &--rainbow--blue {
-    background: $rainbow--blue;
-  }
-  &--rainbow--green {
-    background: $rainbow--green;
-  }
-}
-
 // ********************* BORDER MODIFIERS ********************** //
 .border {
   &--bottom {
-    border-bottom: 96px solid $black;
+    border-bottom: 4rem solid $black;
     &--none {
       border-bottom: none;
     }
