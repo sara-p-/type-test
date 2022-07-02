@@ -16,15 +16,16 @@ html {
 
 html,
 body {
-  height: 100%;
+  height: auto;
   width: 100%;
   margin: 0;
   padding: 0;
   background: $white;
+  position: relative;
 }
 
-main {
-  // padding-top: 75px;
+.main {
+  // position: relative;
 }
 
 .section {
